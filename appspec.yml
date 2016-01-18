@@ -1,0 +1,31 @@
+os: linux
+files:
+  - source: 
+    destination:
+# For deployments to instances other than Windows Server, you can
+#   use a "permissions" section to describe special permissions to apply 
+#   to your files as they are being copied to the instance. Remove this
+#   section if you are not using it.
+permissions:
+  - object:
+    pattern:
+    except:
+    owner:
+    group:
+    mode: 
+    acls:
+      -
+    context:
+      user:
+      type:
+      range:
+    type:
+      -
+# The lifecycle hooks sections allows you to specify deployment scripts.
+# If you are not running any commands on the instance, remove this 
+#   section.
+hooks:
+  BeforeInstall:
+    - location: npm install
+      timeout:
+      runas:  root

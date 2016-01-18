@@ -22,7 +22,7 @@ app.use(expressWinston.logger({
     ]
 }));
 
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 8080;
 
 var router = express.Router();
 router.get('/', function(req,res){
